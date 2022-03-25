@@ -1,0 +1,24 @@
+jobs:
+  openeye-license-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup conda env
+        uses: mamba-org/provision-with-micromamba@maina
+        with:
+          cache-downloads: true
+          environment-file: false
+          channels: openeye
+
+      - name: Install OpenEye tools
+        shell: bash -l {0}
+        run:  mamba install openeye-toolkits
+
+      - name: Check Openeye License
+        shell: bash -l {0}
+        env:
+          OE_LICENSE_TEXT: ${{ secrets.OE_LICENSE }}
+        run: |
+          echo "${OE_LICENSE_TEXT}" > ${OE_LICENSE}
+          python -c "import openeye; assert openeye.oechem.OEChemIsLicensed(), 'OpenEye license checks failed!'"

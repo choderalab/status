@@ -14,4 +14,6 @@ Inspired by https://github.com/openforcefield/status
 
 
 #### Future Work
-Use a yaml file + jinja template to build the README.md programmatically 
+* Use a yaml file + jinja template to build the README.md programmatically 
+* Some workflow/bot commands to re-run CI
+* Automate issue creation when status changes
