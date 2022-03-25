@@ -21,6 +21,7 @@ defaults:
 
 jobs:
   perses-install-check:
+    name: Test on ${{ matrix.OS }}-latest, Python ${{ matrix.python-version }}, Perses ${{ matrix.perses-version }}
     runs-on: ${{ matrix.OS }}-latest
     strategy:
       fail-fast: false
