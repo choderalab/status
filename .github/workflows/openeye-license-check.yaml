@@ -1,3 +1,22 @@
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  schedule:
+    # At 07:00 UTC on Monday and Thursday.
+    - cron: "0 7 * * 1,4"
+
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash -l {0}
+
 jobs:
   openeye-license-check:
     runs-on: ubuntu-latest
@@ -12,11 +31,9 @@ jobs:
           channels: openeye
 
       - name: Install OpenEye tools
-        shell: bash -l {0}
         run:  mamba install openeye-toolkits
 
       - name: Check Openeye License
-        shell: bash -l {0}
         env:
           OE_LICENSE_TEXT: ${{ secrets.OE_LICENSE }}
         run: |
