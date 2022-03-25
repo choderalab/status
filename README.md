@@ -28,3 +28,4 @@ Inspired by https://github.com/openforcefield/status
 * Automate issue creation when status changes
 * For each package, figure out which python versions we want to support
 * Check to see if caching downloads is a bad idea or not
+* Audit repos and figure out which ones we want to track
