@@ -20,7 +20,7 @@ defaults:
     shell: bash -l {0}
 
 jobs:
-  perses-install-check:
+  pymbar-install-check:
     name: Test on ${{ matrix.OS }}-latest, Python ${{ matrix.python-version }}, pymbar ${{ matrix.pymbar-version }}
     runs-on: ${{ matrix.OS }}-latest
     strategy:
@@ -42,5 +42,5 @@ jobs:
           cache-downloads: true
           environment-file: false
 
-      - name: Install perses
+      - name: Install pymbar
         run:  conda install -c jaimergp/label/unsupported-cudatoolkit-shim -c conda-forge pymbar=${{ matrix.perses-version }} python=${{ matrix.python-version }}

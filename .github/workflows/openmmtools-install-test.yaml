@@ -20,7 +20,7 @@ defaults:
     shell: bash -l {0}
 
 jobs:
-  perses-install-check:
+  openmmtools-install-check:
     name: Test on ${{ matrix.OS }}-latest, Python ${{ matrix.python-version }}, openmmtools ${{ matrix.openmmtools-version }}
     runs-on: ${{ matrix.OS }}-latest
     strategy:
@@ -42,5 +42,5 @@ jobs:
           cache-downloads: true
           environment-file: false
 
-      - name: Install perses
+      - name: Install openmmtools
         run:  conda install -c jaimergp/label/unsupported-cudatoolkit-shim -c conda-forge openmmtools=${{ matrix.openmmtools-version }} python=${{ matrix.python-version }}
