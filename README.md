@@ -24,3 +24,4 @@ Inspired by https://github.com/openforcefield/status
 * Use a yaml file + jinja template to build the README.md programmatically 
 * Some workflow/bot commands to re-run CI
 * Automate issue creation when status changes
+* For each package, figure out which python versions we want to support
