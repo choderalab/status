@@ -19,6 +19,8 @@ Inspired by https://github.com/openforcefield/status
 |---|---|---|---|---|---|
 | [**openmm**](https://github.com/openmm/openmm) | [![GH Actions Status](https://github.com/openmm/openmm/workflows/CI/badge.svg)](https://github.com/openmm/openmm/actions?query=branch%3Amaster+workflow%3ACI) | | | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/openmm.svg)](https://anaconda.org/conda-forge/openmm) | |
 
+### Full Stack Install Test
+[![Full Stack Install Test](https://github.com/choderalab/argos/actions/workflows/full-stack-install.yaml/badge.svg)](https://github.com/choderalab/argos/actions/workflows/full-stack-install.yaml)
 
 #### Future Work
 * Use a yaml file + jinja template to build the README.md programmatically 
