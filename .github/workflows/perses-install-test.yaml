@@ -1,4 +1,4 @@
-name: "Openeye License Check"
+name: "Perses Install Check"
 
 on:
   pull_request:
