@@ -1,0 +1,45 @@
+name: "Openeye License Check"
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  schedule:
+    # At 07:00 UTC everyday.
+    - cron: "0 7 * * *"
+
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash -l {0}
+
+jobs:
+  perses-install-check:
+    runs-on: ${{ matrix.OS }}-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ['ubuntu', 'macos']
+        python-version:
+          - 3.8
+          - 3.9
+        perses-version:
+          - 0.9.5
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup conda env
+        uses: mamba-org/provision-with-micromamba@main
+        with:
+          cache-downloads: true
+          environment-file: false
+
+      - name: Install perses
+        run:  conda install perses=${{ matrix.perses-version }} python=${{ matrix.python-version }}
