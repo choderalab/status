@@ -42,4 +42,4 @@ jobs:
           environment-file: false
 
       - name: Install perses
-        run:  conda install perses=${{ matrix.perses-version }} python=${{ matrix.python-version }}
+        run:  conda install -c conda-forge perses=${{ matrix.perses-version }} python=${{ matrix.python-version }}
