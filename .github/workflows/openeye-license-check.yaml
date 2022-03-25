@@ -30,10 +30,9 @@ jobs:
         with:
           cache-downloads: true
           environment-file: false
-          channels: openeye
 
       - name: Install OpenEye tools
-        run:  conda install openeye-toolkits
+        run:  conda install -c openeye openeye-toolkits python=3.9
 
       - name: Check Openeye License
         env:
