@@ -34,7 +34,7 @@ jobs:
           environment-file: false
 
       - name: Install OpenEye tools
-        run:  conda install -c openeye openeye-toolkits
+        run:  conda install -c conda-forge -c openeye openeye-toolkits
 
       - name: Check Openeye License
         env:
