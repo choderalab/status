@@ -34,7 +34,7 @@ jobs:
           environment-file: false
 
       - name: Install OpenEye tools
-        run:  conda install -c openeye openeye-toolkits python=3.9
+        run:  mamba install -c openeye openeye-toolkits python=3.9
 
       - name: Check Openeye License
         env:
