@@ -31,11 +31,11 @@ jobs:
           - 3.8
           - 3.9
         perses-version:
-          - 0.9.5
+          - 0.10.1
         openmm-version:
           - 7.7.0
         openmmtools-version:
-          - 0.21.2
+          - 0.21.5
 
     steps:
       - uses: actions/checkout@v3
